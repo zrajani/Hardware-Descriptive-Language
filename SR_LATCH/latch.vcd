@@ -1,0 +1,42 @@
+$date
+	Fri Mar 16 18:31:25 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module SR_test $end
+$var wire 1 ! qbar $end
+$var wire 1 " q $end
+$var reg 1 # reset $end
+$var reg 1 $ set $end
+$scope module m1 $end
+$var wire 1 " Q $end
+$var wire 1 ! Qbar $end
+$var wire 1 # R $end
+$var wire 1 $ S $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0$
+0#
+x"
+x!
+$end
+#50
+1!
+0"
+1#
+#100
+1"
+0!
+1$
+0#
+#150
+0"
+1#
+#200
