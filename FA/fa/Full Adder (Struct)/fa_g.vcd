@@ -1,0 +1,99 @@
+$date
+	Tue Dec 12 00:58:57 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module fa_gates_tb $end
+$var wire 1 ! out $end
+$var wire 1 " cout $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % cin $end
+$var integer 32 & i [31:0] $end
+$scope module uut $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % cin $end
+$var wire 1 " co $end
+$var wire 1 ' ha2_sum $end
+$var wire 1 ! s $end
+$var wire 1 ( ha2_carry $end
+$var wire 1 ) ha1_sum $end
+$var wire 1 * ha1_carry $end
+$scope module ha1 $end
+$var wire 1 # A $end
+$var wire 1 $ B $end
+$var wire 1 * Carry $end
+$var wire 1 ) Sum $end
+$upscope $end
+$scope module ha2 $end
+$var wire 1 ) A $end
+$var wire 1 % B $end
+$var wire 1 ( Carry $end
+$var wire 1 ! Sum $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0*
+0)
+0(
+z'
+b0 &
+0%
+0$
+0#
+0"
+0!
+$end
+#50
+1!
+1%
+b1 &
+#100
+1)
+1!
+1$
+0%
+b10 &
+#150
+1"
+0!
+1(
+1%
+b11 &
+#200
+0"
+1!
+0(
+1#
+0$
+0%
+b100 &
+#250
+1"
+0!
+1(
+1%
+b101 &
+#300
+0)
+1*
+0!
+0(
+1$
+0%
+b110 &
+#350
+1!
+1%
+b111 &
+#400
+b1000 &
+#450
