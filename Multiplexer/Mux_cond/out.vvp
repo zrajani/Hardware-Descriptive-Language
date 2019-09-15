@@ -1,0 +1,92 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0081ca18 .scope module, "mux_tb" "mux_tb" 2 5;
+ .timescale -9 -12;
+v01fb5120_0 .var "in", 3 0;
+v01fb5178_0 .net "out", 0 0, L_01fb5648;  1 drivers
+v01fb51d0_0 .var "sel", 1 0;
+S_0081c748 .scope module, "m1" "mux_cond" 2 23, 3 1 0, S_0081ca18;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 2 "select"
+    .port_info 1 /INPUT 4 "d"
+    .port_info 2 /OUTPUT 1 "q"
+v0081c818_0 .net *"_s0", 31 0, L_01fb5228;  1 drivers
+v01fb4a40_0 .net *"_s10", 31 0, L_01fb5330;  1 drivers
+L_01fb5a80 .functor BUFT 1, C4<000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v01fb4a98_0 .net *"_s13", 29 0, L_01fb5a80;  1 drivers
+L_01fb5aa8 .functor BUFT 1, C4<00000000000000000000000000000001>, C4<0>, C4<0>, C4<0>;
+v01fb4af0_0 .net/2u *"_s14", 31 0, L_01fb5aa8;  1 drivers
+v01fb4b48_0 .net *"_s16", 0 0, L_01fb5388;  1 drivers
+v01fb4ba0_0 .net *"_s19", 0 0, L_01fb53e0;  1 drivers
+v01fb4bf8_0 .net *"_s20", 31 0, L_01fb5438;  1 drivers
+L_01fb5ad0 .functor BUFT 1, C4<000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v01fb4c50_0 .net *"_s23", 29 0, L_01fb5ad0;  1 drivers
+L_01fb5af8 .functor BUFT 1, C4<00000000000000000000000000000010>, C4<0>, C4<0>, C4<0>;
+v01fb4ca8_0 .net/2u *"_s24", 31 0, L_01fb5af8;  1 drivers
+v01fb4d00_0 .net *"_s26", 0 0, L_01fb5490;  1 drivers
+v01fb4d58_0 .net *"_s29", 0 0, L_01fb54e8;  1 drivers
+L_01fb5a30 .functor BUFT 1, C4<000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v01fb4db0_0 .net *"_s3", 29 0, L_01fb5a30;  1 drivers
+v01fb4e08_0 .net *"_s31", 0 0, L_01fb5540;  1 drivers
+v01fb4e60_0 .net *"_s32", 0 0, L_01fb5598;  1 drivers
+v01fb4eb8_0 .net *"_s34", 0 0, L_01fb55f0;  1 drivers
+L_01fb5a58 .functor BUFT 1, C4<00000000000000000000000000000000>, C4<0>, C4<0>, C4<0>;
+v01fb4f10_0 .net/2u *"_s4", 31 0, L_01fb5a58;  1 drivers
+v01fb4f68_0 .net *"_s6", 0 0, L_01fb5280;  1 drivers
+v01fb4fc0_0 .net *"_s9", 0 0, L_01fb52d8;  1 drivers
+v01fb5018_0 .net "d", 3 0, v01fb5120_0;  1 drivers
+v01fb5070_0 .net "q", 0 0, L_01fb5648;  alias, 1 drivers
+v01fb50c8_0 .net "select", 1 0, v01fb51d0_0;  1 drivers
+L_01fb5228 .concat [ 2 30 0 0], v01fb51d0_0, L_01fb5a30;
+L_01fb5280 .cmp/eq 32, L_01fb5228, L_01fb5a58;
+L_01fb52d8 .part v01fb5120_0, 0, 1;
+L_01fb5330 .concat [ 2 30 0 0], v01fb51d0_0, L_01fb5a80;
+L_01fb5388 .cmp/eq 32, L_01fb5330, L_01fb5aa8;
+L_01fb53e0 .part v01fb5120_0, 1, 1;
+L_01fb5438 .concat [ 2 30 0 0], v01fb51d0_0, L_01fb5ad0;
+L_01fb5490 .cmp/eq 32, L_01fb5438, L_01fb5af8;
+L_01fb54e8 .part v01fb5120_0, 2, 1;
+L_01fb5540 .part v01fb5120_0, 3, 1;
+L_01fb5598 .functor MUXZ 1, L_01fb5540, L_01fb54e8, L_01fb5490, C4<>;
+L_01fb55f0 .functor MUXZ 1, L_01fb5598, L_01fb53e0, L_01fb5388, C4<>;
+L_01fb5648 .functor MUXZ 1, L_01fb55f0, L_01fb52d8, L_01fb5280, C4<>;
+    .scope S_0081ca18;
+T_0 ;
+    %vpi_call 2 28 "$dumpfile", "mux_out.vcd" {0 0 0};
+    %vpi_call 2 29 "$dumpvars", 32'sb00000000000000000000000000000000, S_0081ca18 {0 0 0};
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 4;
+    %store/vec4 v01fb5120_0, 0, 4;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v01fb51d0_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v01fb51d0_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v01fb51d0_0, 0, 2;
+    %delay 10000, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v01fb51d0_0, 0, 2;
+    %delay 10000, 0;
+    %vpi_call 2 41 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0081ca18;
+T_1 ;
+    %vpi_call 2 47 "$monitor", $time, "in=%b, sel=%b , out=%b ", v01fb5120_0, v01fb51d0_0, v01fb5178_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "mux_tb.v";
+    "./Mux_cond.v";

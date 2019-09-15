@@ -1,0 +1,198 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_007ea758 .scope module, "mux8to1_tb" "mux8to1_tb" 2 5;
+ .timescale -9 -12;
+RS_01fb24ec .resolv tri, L_01fa2450, L_01fa2498;
+v01fdbd90_0 .net8 "Out", 0 0, RS_01fb24ec;  2 drivers, strength-aware
+v01fdbde8_0 .var "Sel", 2 0;
+v01fdbe40_0 .var "a", 7 0;
+v01fdbe98_0 .var "count", 2 0;
+S_01fa6ec0 .scope module, "m1" "mux_str" 2 30, 3 21 0, S_007ea758;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 8 "a"
+    .port_info 1 /INPUT 3 "sel"
+    .port_info 2 /OUTPUT 1 "out"
+v01fdbbd8_0 .net "a", 7 0, v01fdbe40_0;  1 drivers
+RS_01fb212c .resolv tri, L_01fa2210, L_01fa2258;
+v01fdbc30_0 .net8 "mux_1", 0 0, RS_01fb212c;  2 drivers, strength-aware
+RS_01fb23cc .resolv tri, L_01fa23c0, L_01fa2408;
+v01fdbc88_0 .net8 "mux_2", 0 0, RS_01fb23cc;  2 drivers, strength-aware
+v01fdbce0_0 .net8 "out", 0 0, RS_01fb24ec;  alias, 2 drivers, strength-aware
+v01fdbd38_0 .net "sel", 2 0, v01fdbde8_0;  1 drivers
+L_01fde130 .part v01fdbe40_0, 4, 4;
+L_01fde188 .part v01fdbde8_0, 0, 2;
+L_01fde3f0 .part v01fdbe40_0, 0, 4;
+L_01fde448 .part v01fdbde8_0, 0, 2;
+L_01fde4a0 .part v01fdbde8_0, 2, 1;
+S_007e51d0 .scope module, "m1" "mux4to1" 3 28, 3 9 0, S_01fa6ec0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "a"
+    .port_info 1 /INPUT 2 "sel"
+    .port_info 2 /OUTPUT 1 "out"
+v01fdb398_0 .net "a", 3 0, L_01fde130;  1 drivers
+RS_01fb1fdc .resolv tri, L_01fa20f0, L_01fa2138;
+v01fdb3f0 .array "mux", 0 2;
+v01fdb3f0_0 .net8 v01fdb3f0 0, 0 0, RS_01fb1fdc; 2 drivers, strength-aware
+RS_01fb209c .resolv tri, L_01fa2180, L_01fa21c8;
+v01fdb3f0_1 .net8 v01fdb3f0 1, 0 0, RS_01fb209c; 2 drivers, strength-aware
+o01fb21d4 .functor BUFZ 1, C4<z>; HiZ drive
+v01fdb3f0_2 .net v01fdb3f0 2, 0 0, o01fb21d4; 0 drivers
+v01fdb448_0 .net8 "out", 0 0, RS_01fb212c;  alias, 2 drivers, strength-aware
+v01fdb4a0_0 .net "sel", 1 0, L_01fde188;  1 drivers
+L_01fdbef0 .part L_01fde130, 3, 1;
+L_01fdbf48 .part L_01fde130, 2, 1;
+L_01fddfd0 .part L_01fde188, 0, 1;
+L_01fde028 .part L_01fde130, 1, 1;
+L_01fde080 .part L_01fde188, 0, 1;
+L_01fde0d8 .part L_01fde188, 1, 1;
+S_007e52a0 .scope module, "m1" "mux2to1" 3 16, 3 1 0, S_007e51d0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a"
+    .port_info 1 /INPUT 1 "b"
+    .port_info 2 /INPUT 1 "sel"
+    .port_info 3 /OUTPUT 1 "out"
+L_01fa20f0 .functor BUFIF1 1, L_01fdbef0, L_01fddfd0, C4<0>, C4<0>;
+L_01fa2138 .functor BUFIF0 1, L_01fdbf48, L_01fddfd0, C4<0>, C4<0>;
+v01fa6f90_0 .net "a", 0 0, L_01fdbef0;  1 drivers
+v01fdafd0_0 .net "b", 0 0, L_01fdbf48;  1 drivers
+v01fdb028_0 .net8 "out", 0 0, RS_01fb1fdc;  alias, 2 drivers, strength-aware
+v01fdb080_0 .net "sel", 0 0, L_01fddfd0;  1 drivers
+S_007e56e8 .scope module, "m2" "mux2to1" 3 17, 3 1 0, S_007e51d0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a"
+    .port_info 1 /INPUT 1 "b"
+    .port_info 2 /INPUT 1 "sel"
+    .port_info 3 /OUTPUT 1 "out"
+L_01fa2180 .functor BUFIF1 1, L_01fde028, L_01fde080, C4<0>, C4<0>;
+L_01fdefc0 .functor BUFT 1, C4<x>, C4<0>, C4<0>, C4<0>;
+L_01fa21c8 .functor BUFIF0 1, L_01fdefc0, L_01fde080, C4<0>, C4<0>;
+v01fdb0d8_0 .net "a", 0 0, L_01fde028;  1 drivers
+v01fdb130_0 .net "b", 0 0, L_01fdefc0;  1 drivers
+v01fdb188_0 .net8 "out", 0 0, RS_01fb209c;  alias, 2 drivers, strength-aware
+v01fdb1e0_0 .net "sel", 0 0, L_01fde080;  1 drivers
+S_007e57b8 .scope module, "m3" "mux2to1" 3 18, 3 1 0, S_007e51d0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a"
+    .port_info 1 /INPUT 1 "b"
+    .port_info 2 /INPUT 1 "sel"
+    .port_info 3 /OUTPUT 1 "out"
+L_01fa2210 .functor BUFIF1 1, RS_01fb1fdc, L_01fde0d8, C4<0>, C4<0>;
+L_01fa2258 .functor BUFIF0 1, RS_01fb209c, L_01fde0d8, C4<0>, C4<0>;
+v01fdb238_0 .net8 "a", 0 0, RS_01fb1fdc;  alias, 2 drivers, strength-aware
+v01fdb290_0 .net8 "b", 0 0, RS_01fb209c;  alias, 2 drivers, strength-aware
+v01fdb2e8_0 .net8 "out", 0 0, RS_01fb212c;  alias, 2 drivers, strength-aware
+v01fdb340_0 .net "sel", 0 0, L_01fde0d8;  1 drivers
+S_007ef078 .scope module, "m2" "mux4to1" 3 29, 3 9 0, S_01fa6ec0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 4 "a"
+    .port_info 1 /INPUT 2 "sel"
+    .port_info 2 /OUTPUT 1 "out"
+v01fdb918_0 .net "a", 3 0, L_01fde3f0;  1 drivers
+RS_01fb227c .resolv tri, L_01fa22a0, L_01fa22e8;
+v01fdb970 .array "mux", 0 2;
+v01fdb970_0 .net8 v01fdb970 0, 0 0, RS_01fb227c; 2 drivers, strength-aware
+RS_01fb233c .resolv tri, L_01fa2330, L_01fa2378;
+v01fdb970_1 .net8 v01fdb970 1, 0 0, RS_01fb233c; 2 drivers, strength-aware
+o01fb2474 .functor BUFZ 1, C4<z>; HiZ drive
+v01fdb970_2 .net v01fdb970 2, 0 0, o01fb2474; 0 drivers
+v01fdb9c8_0 .net8 "out", 0 0, RS_01fb23cc;  alias, 2 drivers, strength-aware
+v01fdba20_0 .net "sel", 1 0, L_01fde448;  1 drivers
+L_01fde1e0 .part L_01fde3f0, 3, 1;
+L_01fde238 .part L_01fde3f0, 2, 1;
+L_01fde290 .part L_01fde448, 0, 1;
+L_01fde2e8 .part L_01fde3f0, 1, 1;
+L_01fde340 .part L_01fde448, 0, 1;
+L_01fde398 .part L_01fde448, 1, 1;
+S_007ef148 .scope module, "m1" "mux2to1" 3 16, 3 1 0, S_007ef078;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a"
+    .port_info 1 /INPUT 1 "b"
+    .port_info 2 /INPUT 1 "sel"
+    .port_info 3 /OUTPUT 1 "out"
+L_01fa22a0 .functor BUFIF1 1, L_01fde1e0, L_01fde290, C4<0>, C4<0>;
+L_01fa22e8 .functor BUFIF0 1, L_01fde238, L_01fde290, C4<0>, C4<0>;
+v01fdb4f8_0 .net "a", 0 0, L_01fde1e0;  1 drivers
+v01fdb550_0 .net "b", 0 0, L_01fde238;  1 drivers
+v01fdb5a8_0 .net8 "out", 0 0, RS_01fb227c;  alias, 2 drivers, strength-aware
+v01fdb600_0 .net "sel", 0 0, L_01fde290;  1 drivers
+S_007edff8 .scope module, "m2" "mux2to1" 3 17, 3 1 0, S_007ef078;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a"
+    .port_info 1 /INPUT 1 "b"
+    .port_info 2 /INPUT 1 "sel"
+    .port_info 3 /OUTPUT 1 "out"
+L_01fa2330 .functor BUFIF1 1, L_01fde2e8, L_01fde340, C4<0>, C4<0>;
+L_01fdefe8 .functor BUFT 1, C4<x>, C4<0>, C4<0>, C4<0>;
+L_01fa2378 .functor BUFIF0 1, L_01fdefe8, L_01fde340, C4<0>, C4<0>;
+v01fdb658_0 .net "a", 0 0, L_01fde2e8;  1 drivers
+v01fdb6b0_0 .net "b", 0 0, L_01fdefe8;  1 drivers
+v01fdb708_0 .net8 "out", 0 0, RS_01fb233c;  alias, 2 drivers, strength-aware
+v01fdb760_0 .net "sel", 0 0, L_01fde340;  1 drivers
+S_007ee0c8 .scope module, "m3" "mux2to1" 3 18, 3 1 0, S_007ef078;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a"
+    .port_info 1 /INPUT 1 "b"
+    .port_info 2 /INPUT 1 "sel"
+    .port_info 3 /OUTPUT 1 "out"
+L_01fa23c0 .functor BUFIF1 1, RS_01fb227c, L_01fde398, C4<0>, C4<0>;
+L_01fa2408 .functor BUFIF0 1, RS_01fb233c, L_01fde398, C4<0>, C4<0>;
+v01fdb7b8_0 .net8 "a", 0 0, RS_01fb227c;  alias, 2 drivers, strength-aware
+v01fdb810_0 .net8 "b", 0 0, RS_01fb233c;  alias, 2 drivers, strength-aware
+v01fdb868_0 .net8 "out", 0 0, RS_01fb23cc;  alias, 2 drivers, strength-aware
+v01fdb8c0_0 .net "sel", 0 0, L_01fde398;  1 drivers
+S_01fadd90 .scope module, "m3" "mux2to1" 3 30, 3 1 0, S_01fa6ec0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a"
+    .port_info 1 /INPUT 1 "b"
+    .port_info 2 /INPUT 1 "sel"
+    .port_info 3 /OUTPUT 1 "out"
+L_01fa2450 .functor BUFIF1 1, RS_01fb212c, L_01fde4a0, C4<0>, C4<0>;
+L_01fa2498 .functor BUFIF0 1, RS_01fb23cc, L_01fde4a0, C4<0>, C4<0>;
+v01fdba78_0 .net8 "a", 0 0, RS_01fb212c;  alias, 2 drivers, strength-aware
+v01fdbad0_0 .net8 "b", 0 0, RS_01fb23cc;  alias, 2 drivers, strength-aware
+v01fdbb28_0 .net8 "out", 0 0, RS_01fb24ec;  alias, 2 drivers, strength-aware
+v01fdbb80_0 .net "sel", 0 0, L_01fde4a0;  1 drivers
+    .scope S_007ea758;
+T_0 ;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v01fdbe98_0, 0, 3;
+    %end;
+    .thread T_0;
+    .scope S_007ea758;
+T_1 ;
+    %vpi_call 2 35 "$dumpfile", "mux_out.vcd" {0 0 0};
+    %vpi_call 2 36 "$dumpvars", 32'sb00000000000000000000000000000000, S_007ea758 {0 0 0};
+    %delay 100000, 0;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v01fdbde8_0, 0, 3;
+    %pushi/vec4 175, 0, 8;
+    %store/vec4 v01fdbe40_0, 0, 8;
+    %pushi/vec4 0, 0, 3;
+    %store/vec4 v01fdbe98_0, 0, 3;
+T_1.0 ;
+    %load/vec4 v01fdbe98_0;
+    %pad/u 32;
+    %cmpi/u 8, 0, 32;
+    %jmp/0xz T_1.1, 5;
+    %delay 20000, 0;
+    %load/vec4 v01fdbe98_0;
+    %store/vec4 v01fdbde8_0, 0, 3;
+    %load/vec4 v01fdbe98_0;
+    %addi 1, 0, 3;
+    %store/vec4 v01fdbe98_0, 0, 3;
+    %jmp T_1.0;
+T_1.1 ;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "mux_tb.v";
+    "./mux_str.v";
