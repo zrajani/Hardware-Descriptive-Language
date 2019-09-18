@@ -1,0 +1,106 @@
+$date
+	Mon Mar 19 23:32:43 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module test $end
+$var wire 1 ! qb $end
+$var wire 1 " q $end
+$var reg 1 # clk $end
+$var reg 1 $ j $end
+$var reg 1 % k $end
+$var reg 1 & reset $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1&
+0%
+0$
+0#
+x"
+x!
+$end
+#4
+0&
+1%
+1$
+#5
+1!
+0"
+1#
+#10
+0#
+#15
+1#
+#20
+0#
+#25
+1#
+#30
+0#
+#35
+1#
+#40
+0#
+#44
+1&
+#45
+0!
+1"
+1#
+#50
+0#
+#54
+0$
+#55
+1!
+0"
+1#
+#60
+0#
+#64
+0%
+1$
+#65
+0!
+1"
+1#
+#70
+0#
+#74
+0$
+#75
+1#
+#80
+0#
+#84
+1%
+1$
+#85
+1!
+0"
+1#
+#90
+0#
+#94
+0&
+#95
+1#
+#100
+0#
+#104
+0%
+#105
+1#
+#110
+0#
+#115
+1#
+#120
+0#
+#124
