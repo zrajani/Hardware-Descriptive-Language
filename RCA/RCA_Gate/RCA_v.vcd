@@ -1,0 +1,131 @@
+$date
+	Wed Dec 13 12:01:36 2017
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testAdder $end
+$var wire 4 ! sum [3:0] $end
+$var wire 1 " carryout $end
+$var reg 4 # A [3:0] $end
+$var reg 4 $ B [3:0] $end
+$var reg 1 % CarryIn $end
+$scope module adder $end
+$var wire 4 & A [3:0] $end
+$var wire 4 ' B [3:0] $end
+$var wire 1 % C0 $end
+$var wire 4 ( S [3:0] $end
+$var wire 1 " C4 $end
+$var wire 1 ) C3 $end
+$var wire 1 * C2 $end
+$var wire 1 + C1 $end
+$scope module FA0 $end
+$var wire 1 , a $end
+$var wire 1 - b $end
+$var wire 1 % cin $end
+$var wire 1 + cout $end
+$var wire 1 . o1 $end
+$var wire 1 / o2 $end
+$var wire 1 0 o3 $end
+$var wire 1 1 s $end
+$upscope $end
+$scope module FA1 $end
+$var wire 1 2 a $end
+$var wire 1 3 b $end
+$var wire 1 + cin $end
+$var wire 1 * cout $end
+$var wire 1 4 o1 $end
+$var wire 1 5 o2 $end
+$var wire 1 6 o3 $end
+$var wire 1 7 s $end
+$upscope $end
+$scope module FA2 $end
+$var wire 1 8 a $end
+$var wire 1 9 b $end
+$var wire 1 * cin $end
+$var wire 1 ) cout $end
+$var wire 1 : o1 $end
+$var wire 1 ; o2 $end
+$var wire 1 < o3 $end
+$var wire 1 = s $end
+$upscope $end
+$scope module FA3 $end
+$var wire 1 > a $end
+$var wire 1 ? b $end
+$var wire 1 ) cin $end
+$var wire 1 " cout $end
+$var wire 1 @ o1 $end
+$var wire 1 A o2 $end
+$var wire 1 B o3 $end
+$var wire 1 C s $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0C
+1B
+0A
+0@
+1?
+1>
+1=
+0<
+0;
+0:
+09
+08
+07
+06
+15
+14
+13
+02
+01
+10
+0/
+0.
+1-
+1,
+1+
+1*
+0)
+b100 (
+b1011 '
+b1001 &
+0%
+b1011 $
+b1001 #
+1"
+b100 !
+$end
+#10
+1*
+1C
+07
+15
+1)
+1/
+1+
+0=
+1;
+1.
+00
+1:
+b1000 !
+b1000 (
+01
+0-
+03
+12
+18
+1%
+b1000 $
+b1000 '
+b1111 #
+b1111 &
+#40

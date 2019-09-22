@@ -1,0 +1,235 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00663d18 .scope module, "RCA_tb" "RCA_tb" 2 5;
+ .timescale 0 0;
+v0069dcf8_0 .var "A", 3 0;
+v0069dd50_0 .var "B", 3 0;
+v0069dda8_0 .var "CarryIn", 0 0;
+v0069de00_0 .net "carryout", 0 0, L_00662ac8;  1 drivers
+v0069de58_0 .net "sum", 3 0, L_0069ea90;  1 drivers
+S_003b3ba8 .scope module, "R1" "RCA" 2 13, 3 26 0, S_00663d18;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 4 "S"
+    .port_info 1 /OUTPUT 1 "C4"
+    .port_info 2 /INPUT 4 "A"
+    .port_info 3 /INPUT 4 "B"
+    .port_info 4 /INPUT 1 "C0"
+v0069da38_0 .net "A", 3 0, v0069dcf8_0;  1 drivers
+v0069da90_0 .net "B", 3 0, v0069dd50_0;  1 drivers
+v0069dae8_0 .net "C0", 0 0, v0069dda8_0;  1 drivers
+v0069db40_0 .net "C1", 0 0, L_00662690;  1 drivers
+v0069db98_0 .net "C2", 0 0, L_006627f8;  1 drivers
+v0069dbf0_0 .net "C3", 0 0, L_00662960;  1 drivers
+v0069dc48_0 .net "C4", 0 0, L_00662ac8;  alias, 1 drivers
+v0069dca0_0 .net "S", 3 0, L_0069ea90;  alias, 1 drivers
+L_0069deb0 .part v0069dcf8_0, 0, 1;
+L_0069df08 .part v0069dd50_0, 0, 1;
+L_0069df60 .part v0069dcf8_0, 1, 1;
+L_0069e988 .part v0069dd50_0, 1, 1;
+L_0069e9e0 .part v0069dcf8_0, 2, 1;
+L_0069ea38 .part v0069dd50_0, 2, 1;
+L_0069ea90 .concat8 [ 1 1 1 1], L_00662600, L_00662768, L_006628d0, L_00662a38;
+L_0069eae8 .part v0069dcf8_0, 3, 1;
+L_0069eb40 .part v0069dd50_0, 3, 1;
+S_003b3c78 .scope module, "FA0" "fulladder" 3 34, 3 13 0, S_003b3ba8;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+    .port_info 4 /INPUT 1 "z"
+o0067209c .functor BUFZ 1, C4<z>; HiZ drive
+o00671fc4 .functor BUFZ 1, C4<z>; HiZ drive
+L_00662690 .functor OR 1, o0067209c, o00671fc4, C4<0>, C4<0>;
+v006643b8_0 .net "C", 0 0, L_00662690;  alias, 1 drivers
+v00664410_0 .net "D1", 0 0, o00671fc4;  0 drivers
+v00664468_0 .net "D2", 0 0, o0067209c;  0 drivers
+v006644c0_0 .net "S", 0 0, L_00662600;  1 drivers
+v00664518_0 .net "S1", 0 0, L_00662570;  1 drivers
+v00664570_0 .net "x", 0 0, L_0069deb0;  1 drivers
+v006645c8_0 .net "y", 0 0, L_0069df08;  1 drivers
+v00664620_0 .net "z", 0 0, v0069dda8_0;  alias, 1 drivers
+S_003b4c20 .scope module, "HA1" "halfadder" 3 20, 3 3 0, S_003b3c78;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+L_00662570 .functor XOR 1, L_0069deb0, L_0069df08, C4<0>, C4<0>;
+L_006625b8 .functor AND 1, L_0069deb0, L_0069df08, C4<1>, C4<1>;
+v00664048_0 .net "C", 0 0, o00671fc4;  alias, 0 drivers
+v006640a0_0 .net "S", 0 0, L_00662570;  alias, 1 drivers
+v006640f8_0 .net "c", 0 0, L_006625b8;  1 drivers
+v00664150_0 .net "x", 0 0, L_0069deb0;  alias, 1 drivers
+v006641a8_0 .net "y", 0 0, L_0069df08;  alias, 1 drivers
+S_003b4cf0 .scope module, "HA2" "halfadder" 3 21, 3 3 0, S_003b3c78;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+L_00662600 .functor XOR 1, L_00662570, v0069dda8_0, C4<0>, C4<0>;
+L_00662648 .functor AND 1, L_00662570, v0069dda8_0, C4<1>, C4<1>;
+v00664200_0 .net "C", 0 0, o0067209c;  alias, 0 drivers
+v00664258_0 .net "S", 0 0, L_00662600;  alias, 1 drivers
+v006642b0_0 .net "c", 0 0, L_00662648;  1 drivers
+v00664308_0 .net "x", 0 0, L_00662570;  alias, 1 drivers
+v00664360_0 .net "y", 0 0, v0069dda8_0;  alias, 1 drivers
+S_0066f858 .scope module, "FA1" "fulladder" 3 35, 3 13 0, S_003b3ba8;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+    .port_info 4 /INPUT 1 "z"
+o006722c4 .functor BUFZ 1, C4<z>; HiZ drive
+o006721ec .functor BUFZ 1, C4<z>; HiZ drive
+L_006627f8 .functor OR 1, o006722c4, o006721ec, C4<0>, C4<0>;
+v006649e8_0 .net "C", 0 0, L_006627f8;  alias, 1 drivers
+v00664a40_0 .net "D1", 0 0, o006721ec;  0 drivers
+v00664a98_0 .net "D2", 0 0, o006722c4;  0 drivers
+v00664af0_0 .net "S", 0 0, L_00662768;  1 drivers
+v00664b48_0 .net "S1", 0 0, L_006626d8;  1 drivers
+v00664ba0_0 .net "x", 0 0, L_0069df60;  1 drivers
+v00664bf8_0 .net "y", 0 0, L_0069e988;  1 drivers
+v00664c50_0 .net "z", 0 0, L_00662690;  alias, 1 drivers
+S_0066f928 .scope module, "HA1" "halfadder" 3 20, 3 3 0, S_0066f858;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+L_006626d8 .functor XOR 1, L_0069df60, L_0069e988, C4<0>, C4<0>;
+L_00662720 .functor AND 1, L_0069df60, L_0069e988, C4<1>, C4<1>;
+v00664678_0 .net "C", 0 0, o006721ec;  alias, 0 drivers
+v006646d0_0 .net "S", 0 0, L_006626d8;  alias, 1 drivers
+v00664728_0 .net "c", 0 0, L_00662720;  1 drivers
+v00664780_0 .net "x", 0 0, L_0069df60;  alias, 1 drivers
+v006647d8_0 .net "y", 0 0, L_0069e988;  alias, 1 drivers
+S_003bee00 .scope module, "HA2" "halfadder" 3 21, 3 3 0, S_0066f858;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+L_00662768 .functor XOR 1, L_006626d8, L_00662690, C4<0>, C4<0>;
+L_006627b0 .functor AND 1, L_006626d8, L_00662690, C4<1>, C4<1>;
+v00664830_0 .net "C", 0 0, o006722c4;  alias, 0 drivers
+v00664888_0 .net "S", 0 0, L_00662768;  alias, 1 drivers
+v006648e0_0 .net "c", 0 0, L_006627b0;  1 drivers
+v00664938_0 .net "x", 0 0, L_006626d8;  alias, 1 drivers
+v00664990_0 .net "y", 0 0, L_00662690;  alias, 1 drivers
+S_003beed0 .scope module, "FA2" "fulladder" 3 36, 3 13 0, S_003b3ba8;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+    .port_info 4 /INPUT 1 "z"
+o006724d4 .functor BUFZ 1, C4<z>; HiZ drive
+o006723fc .functor BUFZ 1, C4<z>; HiZ drive
+L_00662960 .functor OR 1, o006724d4, o006723fc, C4<0>, C4<0>;
+v0069d148_0 .net "C", 0 0, L_00662960;  alias, 1 drivers
+v0069d1a0_0 .net "D1", 0 0, o006723fc;  0 drivers
+v0069d1f8_0 .net "D2", 0 0, o006724d4;  0 drivers
+v0069d250_0 .net "S", 0 0, L_006628d0;  1 drivers
+v0069d2a8_0 .net "S1", 0 0, L_00662840;  1 drivers
+v0069d300_0 .net "x", 0 0, L_0069e9e0;  1 drivers
+v0069d358_0 .net "y", 0 0, L_0069ea38;  1 drivers
+v0069d3b0_0 .net "z", 0 0, L_006627f8;  alias, 1 drivers
+S_0066dad0 .scope module, "HA1" "halfadder" 3 20, 3 3 0, S_003beed0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+L_00662840 .functor XOR 1, L_0069e9e0, L_0069ea38, C4<0>, C4<0>;
+L_00662888 .functor AND 1, L_0069e9e0, L_0069ea38, C4<1>, C4<1>;
+v00664ca8_0 .net "C", 0 0, o006723fc;  alias, 0 drivers
+v00664d00_0 .net "S", 0 0, L_00662840;  alias, 1 drivers
+v00664d58_0 .net "c", 0 0, L_00662888;  1 drivers
+v00664db0_0 .net "x", 0 0, L_0069e9e0;  alias, 1 drivers
+v00664e08_0 .net "y", 0 0, L_0069ea38;  alias, 1 drivers
+S_0066dba0 .scope module, "HA2" "halfadder" 3 21, 3 3 0, S_003beed0;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+L_006628d0 .functor XOR 1, L_00662840, L_006627f8, C4<0>, C4<0>;
+L_00662918 .functor AND 1, L_00662840, L_006627f8, C4<1>, C4<1>;
+v00664e60_0 .net "C", 0 0, o006724d4;  alias, 0 drivers
+v0069cfe8_0 .net "S", 0 0, L_006628d0;  alias, 1 drivers
+v0069d040_0 .net "c", 0 0, L_00662918;  1 drivers
+v0069d098_0 .net "x", 0 0, L_00662840;  alias, 1 drivers
+v0069d0f0_0 .net "y", 0 0, L_006627f8;  alias, 1 drivers
+S_0066dc70 .scope module, "FA3" "fulladder" 3 37, 3 13 0, S_003b3ba8;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+    .port_info 4 /INPUT 1 "z"
+o006726e4 .functor BUFZ 1, C4<z>; HiZ drive
+o0067260c .functor BUFZ 1, C4<z>; HiZ drive
+L_00662ac8 .functor OR 1, o006726e4, o0067260c, C4<0>, C4<0>;
+v0069d778_0 .net "C", 0 0, L_00662ac8;  alias, 1 drivers
+v0069d7d0_0 .net "D1", 0 0, o0067260c;  0 drivers
+v0069d828_0 .net "D2", 0 0, o006726e4;  0 drivers
+v0069d880_0 .net "S", 0 0, L_00662a38;  1 drivers
+v0069d8d8_0 .net "S1", 0 0, L_006629a8;  1 drivers
+v0069d930_0 .net "x", 0 0, L_0069eae8;  1 drivers
+v0069d988_0 .net "y", 0 0, L_0069eb40;  1 drivers
+v0069d9e0_0 .net "z", 0 0, L_00662960;  alias, 1 drivers
+S_0066dd40 .scope module, "HA1" "halfadder" 3 20, 3 3 0, S_0066dc70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+L_006629a8 .functor XOR 1, L_0069eae8, L_0069eb40, C4<0>, C4<0>;
+L_006629f0 .functor AND 1, L_0069eae8, L_0069eb40, C4<1>, C4<1>;
+v0069d408_0 .net "C", 0 0, o0067260c;  alias, 0 drivers
+v0069d460_0 .net "S", 0 0, L_006629a8;  alias, 1 drivers
+v0069d4b8_0 .net "c", 0 0, L_006629f0;  1 drivers
+v0069d510_0 .net "x", 0 0, L_0069eae8;  alias, 1 drivers
+v0069d568_0 .net "y", 0 0, L_0069eb40;  alias, 1 drivers
+S_0066de10 .scope module, "HA2" "halfadder" 3 21, 3 3 0, S_0066dc70;
+ .timescale 0 0;
+    .port_info 0 /OUTPUT 1 "S"
+    .port_info 1 /OUTPUT 1 "C"
+    .port_info 2 /INPUT 1 "x"
+    .port_info 3 /INPUT 1 "y"
+L_00662a38 .functor XOR 1, L_006629a8, L_00662960, C4<0>, C4<0>;
+L_00662a80 .functor AND 1, L_006629a8, L_00662960, C4<1>, C4<1>;
+v0069d5c0_0 .net "C", 0 0, o006726e4;  alias, 0 drivers
+v0069d618_0 .net "S", 0 0, L_00662a38;  alias, 1 drivers
+v0069d670_0 .net "c", 0 0, L_00662a80;  1 drivers
+v0069d6c8_0 .net "x", 0 0, L_006629a8;  alias, 1 drivers
+v0069d720_0 .net "y", 0 0, L_00662960;  alias, 1 drivers
+    .scope S_00663d18;
+T_0 ;
+    %pushi/vec4 9, 0, 4;
+    %store/vec4 v0069dcf8_0, 0, 4;
+    %pushi/vec4 15, 0, 4;
+    %store/vec4 v0069dd50_0, 0, 4;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0069dda8_0, 0, 1;
+    %delay 40, 0;
+    %vpi_call 2 24 "$display", "%b", v0069dcf8_0 {0 0 0};
+    %vpi_call 2 25 "$display", "%b", v0069dd50_0 {0 0 0};
+    %vpi_call 2 26 "$display", "%b", v0069de58_0 {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "RCA_tb.v";
+    "./RCA.v";
