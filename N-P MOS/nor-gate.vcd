@@ -1,0 +1,43 @@
+$date
+	Thu Mar 22 15:40:35 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	100ps
+$end
+$scope module test_np $end
+$var wire 1 ! out $end
+$var reg 1 " A $end
+$var reg 1 # B $end
+$scope module DUT $end
+$var wire 1 " a $end
+$var wire 1 # b $end
+$var wire 1 $ c $end
+$var wire 1 % gnd $end
+$var wire 1 ! out $end
+$var wire 1 & pwr $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1&
+0%
+1$
+0#
+0"
+1!
+$end
+#50
+z$
+0!
+1#
+#100
+1$
+0#
+1"
+#150
+z$
+1#

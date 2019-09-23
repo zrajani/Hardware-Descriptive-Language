@@ -1,0 +1,67 @@
+#! c:/iverilog-x86/bin/vvp
+:ivl_version "10.0 (stable)" "(v10_0)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0080ac00 .scope module, "test_np" "test_np" 2 4;
+ .timescale -9 -10;
+v0080b768_0 .var "A", 0 0;
+v0080b7c0_0 .var "B", 0 0;
+RS_01f6e0e4 .resolv tri, L_01f9e0f0, L_01f9e138, L_01f9e180;
+v0080b818_0 .net8 "out", 0 0, RS_01f6e0e4;  3 drivers, strength-aware
+S_0080fac0 .scope module, "DUT" "nor_np" 2 9, 3 4 0, S_0080ac00;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 1 "out"
+    .port_info 1 /INPUT 1 "a"
+    .port_info 2 /INPUT 1 "b"
+L_0080b8b8 .functor BUFT 1, C8<771>, C4<0>, C4<0>, C4<0>;
+L_01f9e0a8 .functor PMOS 1, L_0080b8b8, v0080b7c0_0, C4<0>, C4<0>;
+L_01f9e0f0 .functor PMOS 1, L_01f9e0a8, v0080b768_0, C4<0>, C4<0>;
+L_0080b870 .functor BUFT 1, C8<770>, C4<0>, C4<0>, C4<0>;
+L_01f9e138 .functor NMOS 1, L_0080b870, v0080b768_0, C4<0>, C4<0>;
+L_01f9e180 .functor NMOS 1, L_0080b870, v0080b7c0_0, C4<0>, C4<0>;
+v0080acd0_0 .net "a", 0 0, v0080b768_0;  1 drivers
+v0080ad28_0 .net "b", 0 0, v0080b7c0_0;  1 drivers
+v0080fb90_0 .net8 "c", 0 0, L_01f9e0a8;  1 drivers, strength-aware
+v0080fbe8_0 .net8 "gnd", 0 0, L_0080b870;  1 drivers, strength-aware
+v0080fc40_0 .net8 "out", 0 0, RS_01f6e0e4;  alias, 3 drivers, strength-aware
+v0080b710_0 .net8 "pwr", 0 0, L_0080b8b8;  1 drivers, strength-aware
+    .scope S_0080ac00;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0080b768_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0080b7c0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0080b768_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0080b7c0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0080b768_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0080b7c0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0080b768_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0080b7c0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_0080ac00;
+T_1 ;
+    %vpi_call 2 24 "$dumpfile", "nor-gate.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars" {0 0 0};
+    %vpi_call 2 26 "$monitor", $time, "A=%b, B=%b, OUT=%b", v0080b768_0, v0080b7c0_0, v0080b818_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "nor_test.v";
+    "./nor_np.v";
