@@ -1,5 +1,5 @@
 `timescale 1ns/100ps
-`include"sync.v" //File name to be tested
+`include"sync.v"
 
 module tb_dff();
 
