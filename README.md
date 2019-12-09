@@ -11,3 +11,4 @@ Basic Concepts of Digital Design done using HDL- Verilog using Iverilog software
 6. D Flip Flop
 7. Priority Encoder
 8. Full Adder
+9. Encoder (8:3)
