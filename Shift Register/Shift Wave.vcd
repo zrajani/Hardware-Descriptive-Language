@@ -1,0 +1,126 @@
+$date
+	Tue Mar 20 11:31:17 2018
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module uni_shift_8b_tst $end
+$var wire 8 ! op [7:0] $end
+$var reg 1 " clk $end
+$var reg 8 # ip [7:0] $end
+$var reg 1 $ load $end
+$var reg 1 % rst_a $end
+$var reg 2 & sh_ro_lt_rt [1:0] $end
+$scope module u1 $end
+$var wire 1 " clk $end
+$var wire 8 ' ip [7:0] $end
+$var wire 1 $ load $end
+$var wire 1 % rst_a $end
+$var wire 2 ( sh_ro_lt_rt [1:0] $end
+$var reg 8 ) op [7:0] $end
+$var reg 8 * temp [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx *
+b0 )
+b0 (
+b11001100 '
+b0 &
+1%
+1$
+b11001100 #
+1"
+b0 !
+$end
+#50000
+0"
+#100000
+b10001100 *
+1"
+b1 &
+b1 (
+0%
+b10001100 #
+b10001100 '
+#150000
+0"
+#200000
+b1000110 !
+b1000110 )
+1"
+0$
+b11001100 #
+b11001100 '
+#250000
+0"
+#300000
+b10101101 *
+1"
+1$
+b10101101 #
+b10101101 '
+#350000
+0"
+#400000
+b1010110 !
+b1010110 )
+1"
+0$
+b11001101 #
+b11001101 '
+#450000
+0"
+#500000
+b11101100 *
+1"
+b10 &
+b10 (
+1$
+b11101100 #
+b11101100 '
+#550000
+0"
+#600000
+b11011001 !
+b11011001 )
+1"
+0$
+b11110000 #
+b11110000 '
+#650000
+0"
+#700000
+b11001100 *
+1"
+b11 &
+b11 (
+1$
+b11001100 #
+b11001100 '
+#750000
+0"
+#800000
+b1100110 !
+b1100110 )
+1"
+0$
+b11001101 #
+b11001101 '
+#850000
+0"
+#900000
+b11001000 *
+1"
+1$
+b11001000 #
+b11001000 '
+#950000
+0"
+#1000000
+1"
