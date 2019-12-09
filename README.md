@@ -1,8 +1,6 @@
 # Hardware-Descriptive-Language
 Basic Concepts of Digital Design done using HDL- Verilog using Iverilog software
 
----?image=circuit-design_1648500.jpg
-
 *Following Programs are created*
 
 1. Flip flops 
@@ -14,3 +12,4 @@ Basic Concepts of Digital Design done using HDL- Verilog using Iverilog software
 7. Priority Encoder
 8. Full Adder
 9. Encoder (8:3)
+
