@@ -15,6 +15,8 @@ SR_Latch m1(q,qbar,reset,set);
 initial
 begin
 
+
+// Output file name and vars level in the output file
 $dumpfile("latch.vcd");
 $dumpvars;
 
