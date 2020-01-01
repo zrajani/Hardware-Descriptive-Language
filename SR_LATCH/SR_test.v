@@ -9,6 +9,7 @@ module SR_test;
 wire q,qbar;
 reg set,reset;
 
+//Design to be tested and how wires are connected
 SR_Latch m1(q,qbar,reset,set);
 
 initial
