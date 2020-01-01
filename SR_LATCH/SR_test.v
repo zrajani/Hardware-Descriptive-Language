@@ -20,6 +20,8 @@ begin
 $dumpfile("latch.vcd");
 $dumpvars;
 
+
+// Output to be displayed on the console
 $monitor($time, " set= %b, reset= %b, q= %b",set,reset,q);
 
 set=0; reset=0;
