@@ -3,6 +3,7 @@
 `timescale 1ns/100ps
 `include "SR_latch.v"
 
+// module test bench begins
 module SR_test;
 
 wire q,qbar;
