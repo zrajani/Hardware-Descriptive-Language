@@ -24,6 +24,8 @@ $dumpvars;
 // Output to be displayed on the console
 $monitor($time, " set= %b, reset= %b, q= %b",set,reset,q);
 
+
+// Testing value for the device
 set=0; reset=0;
 #5 reset=1;
 #5 reset=0; set=1;
