@@ -1,6 +1,6 @@
 //Demux 1:4
 // one input line and 4 output lines 
-
+// Illustrates the concept of case statements in Verilog
 
 module demux1to4 (in,sel,out0,out1,out2,out3);
 
