@@ -4,7 +4,7 @@
 
 module demux1to4 (in,sel,out0,out1,out2,out3);
 
-input [1:0] sel;
+input [1:0] sel; // array type input declaration
 input in;
 output out0,out1,out2,out3;
 
