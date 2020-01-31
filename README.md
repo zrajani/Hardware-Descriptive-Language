@@ -12,5 +12,5 @@ Basic Concepts of Digital Design done using HDL- Verilog using Iverilog software
 7. Priority Encoder
 8. Full Adder
 9. Encoder (8:3)
-10. Transistor Logic Design (NMOS AND PMOS)
+10. Transistor Logic Design (NMOS and PMOS)
 
