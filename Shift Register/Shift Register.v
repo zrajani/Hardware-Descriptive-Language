@@ -1,5 +1,7 @@
 // Universal Shift Register 
 
+
+// Module Declaration
 module uni_shift_8b(op,clk,rst_a, load,sh_ro_lt_rt,ip);
   output reg [7:0] op;
   input load;
