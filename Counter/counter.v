@@ -1,4 +1,8 @@
+
 // Up-Down Counter (Synchronous Clear)
+
+// Author: Zain Rajani
+// Software: Icarus Verilog 
 
 module counter (q,clk,rst,up);
 
