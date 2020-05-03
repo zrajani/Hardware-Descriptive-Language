@@ -14,5 +14,4 @@ Basic Concepts of Digital Design done using HDL- Verilog using Iverilog software
 9. Encoder (8:3)
 10. Transistor Logic Design (NMOS and PMOS)
 11. Shift Register Universal 
-12. Counters (Up,Down and UpDown) 
-
+12. Counters (Up Counter) 
