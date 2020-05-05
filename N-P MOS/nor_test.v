@@ -1,3 +1,5 @@
+// Nor gate using CMOS
+
 `timescale 1ns/100ps
 `include"nor_np.v"
 
