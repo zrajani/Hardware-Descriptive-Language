@@ -1,4 +1,4 @@
-//Program shift register
+//Program shift register Test bench
 
 
 `timescale 1ns/1ps
