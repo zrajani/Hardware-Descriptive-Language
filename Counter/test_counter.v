@@ -1,3 +1,6 @@
+// Program Name: Test Bench for Counter
+
+
 `include "counter.v"
 
 module test_counter;
