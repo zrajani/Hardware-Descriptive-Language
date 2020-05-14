@@ -1,5 +1,7 @@
 //Program shift register Test bench
 
+//Author Zain Rajani 
+
 
 `timescale 1ns/1ps
 `include "Shift Register.v"
