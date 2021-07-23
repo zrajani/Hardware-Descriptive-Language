@@ -1,3 +1,7 @@
+//Booth Multiplier 
+
+// Algorithm: 
+
 module multiplier(prod, busy, mc, mp, clk, start);
 output [15:0] prod;
 output busy;
